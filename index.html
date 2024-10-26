@@ -13,14 +13,13 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
+    
+    
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img
-            src="assets/images/logo.png"
-            alt="Logotipo da cafeteria"
-          />
+          <img src="assets/images/logo.png" alt="Logotipo da cafeteria" />
         </a>
         <button
           class="navbar-toggler"
@@ -48,22 +47,23 @@
               <a class="nav-link" href="#local">Local</a>
             </li>
           </ul>
-          <form class="d-flex" role="search">
+          <form class="d-flex" role="search" id="search-form">
             <input
               class="form-control me-2"
               type="search"
               placeholder="Pesquisar"
               aria-label="Pesquisar"
+              id="search-input"
             />
             <button class="btn btn-primary" type="submit">Buscar</button>
           </form>
         </div>
       </div>
     </nav>
-
+    
     <main>
       <!--Carousel-->
-      <header id="carousel-coffe" class="carousel slide">
+      <header id="carousel-coffe" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-indicators">
           <button
             type="button"
@@ -134,7 +134,7 @@
           type="button"
           data-bs-target="#carousel-coffe"
           data-bs-slide="prev"
-        >
+          >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
@@ -150,7 +150,7 @@
       </header>
 
       <!--Citacao-->
-      <blockquote class="blockquote">
+      <blockquote  class="blockquote">
         <h3 class="fw-ligther text-center fst-italic m-5">
           "O amor é um café às oito da manhã numa segunda."
         </h3>
@@ -218,177 +218,439 @@
       <section id="menu" class="container mt-5 mb-5">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="espresso-tab" data-bs-toggle="tab" data-bs-target="#espresso-tab-pane" type="button" role="tab" aria-controls="espresso-tab-pane" aria-selected="true">Expressos</button>
+            <button
+              class="nav-link active"
+              id="espresso-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#espresso-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="espresso-tab-pane"
+              aria-selected="true"
+            >
+              Expressos
+            </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="cappuccinos-tab" data-bs-toggle="tab" data-bs-target="#cappuccinos-tab-pane" type="button" role="tab" aria-controls="cappuccinos-tab-pane" aria-selected="false">Capuccinos</button>
+            <button
+              class="nav-link"
+              id="cappuccinos-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#cappuccinos-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="cappuccinos-tab-pane"
+              aria-selected="false"
+            >
+              Capuccinos
+            </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="iced-coffee-tab" data-bs-toggle="tab" data-bs-target="#iced-coffee-tab-pane" type="button" role="tab" aria-controls="iced-coffee-tab-pane" aria-selected="false">Gelados</button>
+            <button
+              class="nav-link"
+              id="iced-coffee-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#iced-coffee-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="iced-coffee-tab-pane"
+              aria-selected="false"
+            >
+              Gelados
+            </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="specials-coffee-tab" data-bs-toggle="tab" data-bs-target="#specials-coffee-tab-pane" type="button" role="tab" aria-controls="specials-coffee-tab-pane" aria-selected="false">Pão de Queijo</button>
+            <button
+              class="nav-link"
+              id="specials-coffee-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#specials-coffee-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="specials-coffee-tab-pane"
+              aria-selected="false"
+            >
+              Pão de Queijo
+            </button>
           </li>
         </ul>
+
         <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="espresso-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+          <!-- Expressos -->
+          <div
+            class="tab-pane fade show active"
+            id="espresso-tab-pane"
+            role="tabpanel"
+            aria-labelledby="espresso-tab"
+            tabindex="0"
+          >
             <div class="row row-cols-1 row-cols-md-3 g-3 mt-3">
+              <!-- Cards dos Expressos -->
               <div class="col">
                 <div class="card card-menu">
-                  <img src="assets/images/expressoTradicional.jpg" class="card-img-top" alt="café expresso">
+                  <img
+                    src="assets/images/expressoTradicional.jpg"
+                    class="card-img-top"
+                    alt="café expresso"
+                  />
                   <div class="card-body">
                     <h5 class="card-title">Expresso Tradicional</h5>
-                    <p class="card-text coffee-text">Café puro, intenso e com sabor marcante.<br>Preço: R$5,00</p>
+                    <p class="card-text coffee-text">
+                      Café puro, intenso e com sabor marcante.<br />Preço:
+                      R$5,00
+                    </p>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card card-menu">
-                  <img src="assets/images/expressoDuplo.jpg" class="card-img-top" alt="café expresso">
+                  <img
+                    src="assets/images/expressoDuplo.jpg"
+                    class="card-img-top"
+                    alt="café expresso"
+                  />
                   <div class="card-body">
                     <h5 class="card-title">Expresso Duplo</h5>
-                    <p class="card-text coffee-text">Uma dose dupla de café expresso para quem gosta de um sabor mais forte.<br>Preço: R$8,00</p>
+                    <p class="card-text coffee-text">
+                      Uma dose dupla de café expresso para quem gosta de um
+                      sabor mais forte.<br />Preço: R$8,00
+                    </p>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card card-menu">
-                  <img src="assets/images/expressoMacchiato.jpg" class="card-img-top" alt="café expresso">
+                  <img
+                    src="assets/images/expressoMacchiato.jpg"
+                    class="card-img-top"
+                    alt="café expresso"
+                  />
                   <div class="card-body">
                     <h5 class="card-title">Expresso Macchiato</h5>
-                    <p class="card-text coffee-text">Expresso com uma leve espuma de leite vaporizado.<br>Preço: R$10,00</p>
+                    <p class="card-text coffee-text">
+                      Expresso com uma leve espuma de leite vaporizado.<br />Preço:
+                      R$10,00
+                    </p>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card card-menu">
-                  <img src="assets/images/ExpressoLeite.jpg" class="card-img-top" alt="café expresso">
+                  <img
+                    src="assets/images/ExpressoLeite.jpg"
+                    class="card-img-top"
+                    alt="café expresso"
+                  />
                   <div class="card-body">
                     <h5 class="card-title">Expresso com Leite</h5>
-                    <p class="card-text coffee-text">Café expresso suavizado com uma pequena quantidade de leite quente.<br>Preço: R$8,00</p>
+                    <p class="card-text coffee-text">
+                      Café expresso suavizado com uma pequena quantidade de
+                      leite quente.<br />Preço: R$8,00
+                    </p>
                   </div>
-                </div>  
+                </div>
               </div>
               <div class="col">
                 <div class="card card-menu">
-                  <img src="assets/images/expressoCortado.jpg" class="card-img-top" alt="café expresso">
+                  <img
+                    src="assets/images/expressoCortado.jpg"
+                    class="card-img-top"
+                    alt="café expresso"
+                  />
                   <div class="card-body">
                     <h5 class="card-title">Expresso Cortado</h5>
-                    <p class="card-text coffee-text">Expresso misturado com uma pequena quantidade de leite vaporizado, mais suave e equilibrado.<br> Preço: R$10,00</p>
+                    <p class="card-text coffee-text">
+                      Expresso misturado com uma pequena quantidade de leite
+                      vaporizado, mais suave e equilibrado.<br />
+                      Preço: R$10,00
+                    </p>
                   </div>
-                </div>  
+                </div>
               </div>
-              <div class="col">   
+              <div class="col">
                 <div class="card card-menu">
-                  <img src="assets/images/expressoMocha.jpg" class="card-img-top" alt="Café expresso">
+                  <img
+                    src="assets/images/expressoMocha.jpg"
+                    class="card-img-top"
+                    alt="Café expresso"
+                  />
                   <div class="card-body">
                     <h5 class="card-title">Expresso Mocha</h5>
-                    <p class="card-text coffee-text">Combinação de café expresso com calda de chocolate e uma camada de leite vaporizado.<Br>Preço: R$12,00</p>
+                    <p class="card-text coffee-text">
+                      Combinação de café expresso com calda de chocolate e uma
+                      camada de leite vaporizado.<br />Preço: R$12,00
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="tab-pane fade" id="cappuccinos-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">Capuccinos</div>
+
+          <!-- Capuccinos -->
+          <div
+            class="tab-pane fade"
+            id="cappuccinos-tab-pane"
+            role="tabpanel"
+            aria-labelledby="cappuccinos-tab"
+            tabindex="0"
+          >
             <div class="row row-cols-1 row-cols-md-3 g-3 mt-3">
+              <!-- Cards dos Capuccinos -->
               <div class="col">
                 <div class="card card-menu">
-                  <img src="assets/images/capuccinoTradicional.jpg" class="card-img-top" alt="capuccino">
+                  <img
+                    src="assets/images/capuccinoTradicional.jpg"
+                    class="card-img-top"
+                    alt="capuccino"
+                  />
                   <div class="card-body">
                     <h5 class="card-title">Capuccino Tradicional</h5>
-                    <p class="card-text coffee-text">Clássica mistura de café expresso, leite vaporizado e espuma de leite.<br>Preço: R$15,00</p>
+                    <p class="card-text coffee-text">
+                      Clássica mistura de café expresso, leite vaporizado e
+                      espuma de leite.<br />Preço: R$15,00
+                    </p>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card card-menu">
-                  <img src="assets/images/capuccinoChocolate.jpg" class="card-img-top" alt="capuccino">
+                  <img
+                    src="assets/images/capuccinoChocolate.jpg"
+                    class="card-img-top"
+                    alt="capuccino"
+                  />
                   <div class="card-body">
                     <h5 class="card-title">Capuccino com Chocolate</h5>
-                    <p class="card-text coffee-text">Cappuccino com uma generosa dose de chocolate em pó ou calda de chocolate.<br>Preço: R$18,00</p>
+                    <p class="card-text coffee-text">
+                      Cappuccino com uma generosa dose de chocolate em pó ou
+                      calda de chocolate.<br />Preço: R$18,00
+                    </p>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card card-menu">
-                  <img src="assets/images/capuccinoCreme.webp" class="card-img-top" alt="capiccino">
+                  <img
+                    src="assets/images/capuccinoCreme.webp"
+                    class="card-img-top"
+                    alt="capiccino"
+                  />
                   <div class="card-body">
                     <h5 class="card-title">Capuccino com Creme</h5>
-                    <p class="card-text coffee-text">Cappuccino servido com uma cobertura extra de creme chantilly.<br>Preço: R$18,00</p>
+                    <p class="card-text coffee-text">
+                      Cappuccino servido com uma cobertura extra de creme
+                      chantilly.<br />Preço: R$18,00
+                    </p>
                   </div>
                 </div>
-            </div>  
+              </div>
+            </div>
           </div>
-          <div class="tab-pane fade" id="iced-coffee-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">Cafés Gelados</div>
+
+          <!-- Gelados -->
+          <div
+            class="tab-pane fade"
+            id="iced-coffee-tab-pane"
+            role="tabpanel"
+            aria-labelledby="iced-coffee-tab"
+            tabindex="0"
+          >
             <div class="row row-cols-1 row-cols-md-3 g-3 mt-3">
+              <!-- Cards dos Cafés Gelados -->
               <div class="col">
                 <div class="card card-menu">
-                  <img src="assets/images/geladoTradicional.jpg" class="card-img-top" alt="copo de café gelado">
+                  <img
+                    src="assets/images/geladoTradicional.jpg"
+                    class="card-img-top"
+                    alt="copo de café gelado"
+                  />
                   <div class="card-body">
                     <h5 class="card-title">Café Gelado Tradicional</h5>
-                    <p class="card-text coffee-text">Café coado gelado, servido com gelo, ideal para quem gosta de apreciar o sabor puro do café.<br>Preço: R$20,00</p>
+                    <p class="card-text coffee-text">
+                      Café coado gelado, servido com gelo, ideal para quem gosta
+                      de apreciar o sabor puro do café.<br />Preço: R$20,00
+                    </p>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card card-menu">
-                  <img src="assets/images/geladoCreme.jpg" class="card-img-top" alt="copo de café gelado">
+                  <img
+                    src="assets/images/geladoCreme.jpg"
+                    class="card-img-top"
+                    alt="copo de café gelado"
+                  />
                   <div class="card-body">
                     <h5 class="card-title">Café Gelado com Creme</h5>
-                    <p class="card-text coffee-text">Café gelado servido com uma cobertura extra de creme chantilly.<br>Preço: R$20,00</p>
+                    <p class="card-text coffee-text">
+                      Café gelado servido com uma cobertura extra de creme
+                      chantilly.<br />Preço: R$20,00
+                    </p>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card card-menu">
-                  <img src="assets/images/geladoBaunilha.jpg" class="card-img-top" alt="Taça com café gelado">
+                  <img
+                    src="assets/images/geladoBaunilha.jpg"
+                    class="card-img-top"
+                    alt="Taça com café gelado"
+                  />
                   <div class="card-body">
                     <h5 class="card-title">Café Gelado com Baunilha</h5>
-                    <p class="card-text coffee-text">Café gelado com  creme e um toque de essência de baunilha.<br>Preço: R$20,00</p>
+                    <p class="card-text coffee-text">
+                      Café gelado com creme e um toque de essência de
+                      baunilha.<br />Preço: R$20,00
+                    </p>
                   </div>
                 </div>
               </div>
-            </div> 
-          </div>     
-          <div class="tab-pane fade" id="specials-coffee-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">Pão de Queijo</div>
+            </div>
+          </div>
+
+          <!-- Pão de Queijo -->
+          <div
+            class="tab-pane fade"
+            id="specials-coffee-tab-pane"
+            role="tabpanel"
+            aria-labelledby="specials-coffee-tab"
+            tabindex="0"
+          >
             <div class="row row-cols-1 row-cols-md-3 g-3 mt-3">
+              <!-- Cards dos Pães de Queijo -->
               <div class="col">
                 <div class="card card-menu">
-                  <img src="assets/images/paoTradicional.webp" class="card-img-top" alt="café expresso">
+                  <img
+                    src="assets/images/paoTradicional.webp"
+                    class="card-img-top"
+                    alt="pão de queijo"
+                  />
                   <div class="card-body">
                     <h5 class="card-title">Pão de Queijo Tradicional</h5>
-                    <p class="card-text coffee-text">Clássico pão de queijo mineiro, feito com polvilho e queijo meia-cura<br>Preço: R$8,00</p>
+                    <p class="card-text coffee-text">
+                      Clássico pão de queijo mineiro, feito com polvilho e
+                      queijo meia-cura.<br />Preço: R$8,00
+                    </p>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card card-menu">
-                  <img src="assets/images/paocatupiry.webp" class="card-img-top" alt="café expresso">
+                  <img
+                    src="assets/images/paocatupiry.webp"
+                    class="card-img-top"
+                    alt="café expresso"
+                  />
                   <div class="card-body">
                     <h5 class="card-title">Pão de Queijo com Catupiry</h5>
-                    <p class="card-text coffee-text">Crocante por fora e recheado com cremoso Catupiry.<br>Preço: R$8,00</p>
+                    <p class="card-text coffee-text">
+                      Crocante por fora e recheado com cremoso Catupiry.<br />Preço:
+                      R$8,00
+                    </p>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card card-menu">
-                  <img src="assets/images/paoGorgonzola.jpg" class="card-img-top" alt="café expresso">
+                  <img
+                    src="assets/images/paoGorgonzola.jpg"
+                    class="card-img-top"
+                    alt="café expresso"
+                  />
                   <div class="card-body">
                     <h5 class="card-title">Pão de Queijo Gorgonzola</h5>
-                    <p class="card-text coffee-text">Com um toque sofisticado de gorgonzola, trazendo um sabor marcante e intenso.<br>Preço: R$8,00</p>
+                    <p class="card-text coffee-text">
+                      Com um toque sofisticado de gorgonzola, trazendo um sabor
+                      marcante e intenso.<br />Preço: R$8,00
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>  
-          </div>  
-        </div>      
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Local-->
+      <section class="container text-center mb-5" id="local">
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#localModal"
+        >
+          Quero conhecer a Cafeteria Guerreiro
+        </button>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="localModal"
+          tabindex="-1"
+          aria-labelledby="localModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="localModalLabel">
+                  Estamos te esperando!
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <p>
+                  Te esperamos na Av Duque de Caxias, 10-32, Pq. Universitário,
+                  Bauru, SP.
+                </p>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.6606449760025!2d-49.06939342403741!3d-22.328670479666254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf67a72cbcab81%3A0x66adda7e193d3432!2sAv.%20Duque%20de%20Caxias%2C%2010-32%20-%20Centro%2C%20Bauru%20-%20SP%2C%2017012-000!5e0!3m2!1spt-BR!2sbr!4v1729949779836!5m2!1spt-BR!2sbr"
+                  width="100%"
+                  height="auto"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Fechar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
+    <!--Footer-->
+    <footer class="text-center bg-dark p-5 mt-5 text-light">
+      <img
+        style="width: 80px"
+        src="assets/images/logo.png"
+        alt="Logotipo da cafeteria Guerreiro"
+      />
+      <p class="mt-2 mb-0 fw-bold">
+        Cafeteria Guerreiro | Transformando sua experiencia com café
+      </p>
+      <p>(99)00 99999-9999</p>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js">
+    </script>
   </body>
 </html>
