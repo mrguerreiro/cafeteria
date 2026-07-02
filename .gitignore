@@ -1,6 +1,3 @@
-# Pasta de exemplo/duplicada (não faz parte do site final)
-cafeteria/
-
 # Dependências e artefatos
 node_modules/
 .DS_Store
