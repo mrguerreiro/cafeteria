@@ -11,12 +11,21 @@
     --bs-btn-active-bg: #0c5734;
 }
 
-Main{
+main{
     margin-top: 5rem;
 }
 
-section{
-    scroll-margin-top: 8rem;
+/* Compensa a navbar fixa ao navegar pelas âncoras (#about, #menu, #local) */
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+/* Destaque da busca */
+mark.search-highlight{
+    background: #ffe08a;
+    padding: 0 0.1em;
+    border-radius: 3px;
 }
 
 .navbar-brand img{
@@ -42,16 +51,189 @@ section{
 }
 
 
-.card-menu img{
-    height: 300px;
+/* ===== Seção Sobre Nós ===== */
+.about-card{
+    max-width: 540px;
+    margin-inline: auto;
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(61, 43, 31, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 16px 34px rgba(61, 43, 31, 0.16);
+}
+
+.about-card img{
     object-fit: cover;
 }
 
-.coffee-text{
-    height: 110px;
+/* Rodapé */
+.footer-logo{
+    width: 80px;
 }
 
-.highlight {
-    background-color: yellow;
-    font-weight: bold;
+/* ===== Seção Cardápio ===== */
+.menu-section {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, #fbf7f2 0%, #f3ece3 100%);
+}
+
+.menu-heading {
+    font-weight: 800;
+    color: #3d2b1f;
+    letter-spacing: -0.5px;
+}
+
+.menu-subtitle {
+    color: #8a6d5b;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.menu-heading-line {
+    width: 70px;
+    height: 4px;
+    background: #198754;
+    border-radius: 4px;
+    margin: 1rem auto 0;
+}
+
+/* Abas modernas (pílulas) */
+.menu-tabs {
+    gap: 0.5rem;
+    border: none;
+}
+
+.menu-tabs .nav-link {
+    border: none;
+    border-radius: 50rem;
+    color: #6f5544;
+    font-weight: 600;
+    padding: 0.55rem 1.4rem;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(61, 43, 31, 0.08);
+    transition: all 0.25s ease;
+}
+
+.menu-tabs .nav-link:hover {
+    color: #198754;
+    transform: translateY(-2px);
+}
+
+.menu-tabs .nav-link.active {
+    background: #198754;
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(25, 135, 84, 0.35);
+}
+
+/* Cards do cardápio */
+.card-menu {
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(61, 43, 31, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.card-menu:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(61, 43, 31, 0.18);
+}
+
+.card-menu .card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-menu img {
+    height: 240px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-menu:hover img {
+    transform: scale(1.08);
+}
+
+.card-menu .price-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: #198754;
+    color: #fff;
+    font-weight: 700;
+    padding: 0.35rem 0.9rem;
+    border-radius: 50rem;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Tipografia unificada dos cards (Sobre Nós + Cardápio) ===== */
+.card-title {
+    font-weight: 700;
+    color: #3d2b1f;
+}
+
+.card-text {
+    color: #6f5544;
+    font-size: 0.92rem;
+}
+
+.coffee-text {
+    min-height: 80px;
+    margin-bottom: 0;
+}
+
+/* ===== Seção Local ===== */
+.local-section {
+    padding: 4rem 0;
+}
+
+.local-info {
+    color: #6f5544;
+}
+
+.local-info .local-address {
+    font-size: 1.1rem;
+    color: #3d2b1f;
+    font-weight: 600;
+}
+
+.local-info li {
+    margin-bottom: 0.6rem;
+}
+
+.local-map {
+    border: 0;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(61, 43, 31, 0.18);
+    width: 100%;
+    min-height: 360px;
+}
+
+.btn-waze {
+    --bs-btn-bg: #33ccff;
+    --bs-btn-border-color: #1cb8ee;
+    --bs-btn-hover-bg: #1cb8ee;
+    --bs-btn-hover-border-color: #1cb8ee;
+    --bs-btn-active-bg: #12a6db;
+    --bs-btn-color: #063a4a;
+    --bs-btn-hover-color: #063a4a;
+    font-weight: 600;
+}
+
+.btn-maps {
+    font-weight: 600;
+}
+
+.local-cta .btn {
+    border-radius: 50rem;
+    padding: 0.6rem 1.4rem;
 }
